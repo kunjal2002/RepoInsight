@@ -1,5 +1,9 @@
 var NAVTREEINDEX12 =
 {
+"da/d19/classresdb_1_1ConsensusManager.html#ae177488994172fcd48047151832529bf":[0,0,22,81,26],
+"da/d19/classresdb_1_1ConsensusManager.html#ae177488994172fcd48047151832529bf":[1,0,6,77,26],
+"da/d19/classresdb_1_1ConsensusManager.html#aebd2d390f956d6128174963605dc1dbe":[0,0,22,81,12],
+"da/d19/classresdb_1_1ConsensusManager.html#aebd2d390f956d6128174963605dc1dbe":[1,0,6,77,12],
 "da/d19/classresdb_1_1ConsensusManager.html#afddbd1de6fd7a2a629e593e879fc1b5e":[0,0,22,81,15],
 "da/d19/classresdb_1_1ConsensusManager.html#afddbd1de6fd7a2a629e593e879fc1b5e":[1,0,6,77,15],
 "da/d19/classresdb_1_1ConsensusManager.html#aff784e311e586b5399d47c822bb34b14":[0,0,22,81,22],
@@ -245,9 +249,5 @@ var NAVTREEINDEX12 =
 "da/dae/contract__manager_8cpp_source.html":[2,0,5,1,1,3],
 "da/db0/signature__verifier_8h.html":[2,0,3,0,9],
 "da/db0/signature__verifier_8h_source.html":[2,0,3,0,9],
-"da/dbe/common_2framework_2transaction__utils_8h.html":[2,0,9,2,2,0,1,7],
-"da/dbe/common_2framework_2transaction__utils_8h_source.html":[2,0,9,2,2,0,1,7],
-"da/dc6/classserver_1_1RepoInsights.html":[0,0,31,3],
-"da/dc6/classserver_1_1RepoInsights.html":[1,0,14,3],
-"da/dcc/namespaceresdb__validator_1_1utils.html":[0,0,26,6]
+"da/dbe/common_2framework_2transaction__utils_8h.html":[2,0,9,2,2,0,1,7]
 };

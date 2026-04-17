@@ -1,5 +1,9 @@
 var NAVTREEINDEX18 =
 {
+"de/d3b/namespacetest__driver.html#adab5d68503758f792efab76e837f7d5c":[0,0,34,7],
+"de/d3b/namespacetest__driver.html#add42628f1f4dc106fb4255360b454edc":[0,0,34,3],
+"de/d3b/namespacetest__driver.html#ae7299da90ca290746cf92ad5d6ad2567":[0,0,34,11],
+"de/d43/classresdb__driver_1_1exceptions_1_1ResDBError.html":[0,0,23,4,8],
 "de/d43/classresdb__driver_1_1exceptions_1_1ResDBError.html":[1,0,7,2,8],
 "de/d46/classresdb_1_1BlockManager.html":[0,0,22,69],
 "de/d46/classresdb_1_1BlockManager.html":[1,0,6,65],
@@ -245,9 +249,5 @@ var NAVTREEINDEX18 =
 "de/dc3/classresdb_1_1NetChannel.html#aae478a2f91c1830e1e782c0497fe6e60":[0,0,22,28,1],
 "de/dc3/classresdb_1_1NetChannel.html#aae478a2f91c1830e1e782c0497fe6e60":[1,0,6,24,1],
 "de/dc3/classresdb_1_1NetChannel.html#ab7a1bb6769a97fd361a17ec07e4131d9":[0,0,22,28,19],
-"de/dc3/classresdb_1_1NetChannel.html#ab7a1bb6769a97fd361a17ec07e4131d9":[1,0,6,24,19],
-"de/dc3/classresdb_1_1NetChannel.html#ad1c28f6288d727cc47fda1f0f49a2481":[0,0,22,28,0],
-"de/dc3/classresdb_1_1NetChannel.html#ad1c28f6288d727cc47fda1f0f49a2481":[1,0,6,24,0],
-"de/dc3/classresdb_1_1NetChannel.html#ad485baf6b6f9d13d279d2b1029ff9346":[0,0,22,28,23],
-"de/dc3/classresdb_1_1NetChannel.html#ad485baf6b6f9d13d279d2b1029ff9346":[1,0,6,24,23]
+"de/dc3/classresdb_1_1NetChannel.html#ab7a1bb6769a97fd361a17ec07e4131d9":[1,0,6,24,19]
 };

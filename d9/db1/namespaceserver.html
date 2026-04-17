@@ -151,6 +151,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a4e8906625ce35c76095c8b09a26f3b08" id="r_a4e8906625ce35c76095c8b09a26f3b08"><td class="memItemLeft">dict&#160;</td><td class="memItemRight"><a class="el" href="#a4e8906625ce35c76095c8b09a26f3b08">setup_guide</a> (str owner, str repo, str question, str branch=&quot;main&quot;)</td></tr>
 <tr class="memitem:aee2925522585c1b51b2d146a98f4e40a" id="r_aee2925522585c1b51b2d146a98f4e40a"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="#aee2925522585c1b51b2d146a98f4e40a">analyze_imports</a> (str owner, str repo, str branch=&quot;main&quot;)</td></tr>
 <tr class="memitem:a6d0320249b5cbe58d0270258b8b5e54c" id="r_a6d0320249b5cbe58d0270258b8b5e54c"><td class="memItemLeft">dict&#160;</td><td class="memItemRight"><a class="el" href="#a6d0320249b5cbe58d0270258b8b5e54c">show_dependency_graph</a> (str owner, str repo, str branch=&quot;main&quot;)</td></tr>
+<tr class="memitem:ab9d5cb8e63d39ac3be040c5d359adc01" id="r_ab9d5cb8e63d39ac3be040c5d359adc01"><td class="memItemLeft">List[str]&#160;</td><td class="memItemRight"><a class="el" href="#ab9d5cb8e63d39ac3be040c5d359adc01">parse_python_imports_v2</a> (str file_content)</td></tr>
+<tr class="memitem:a23ede601f8aeb2e1b9b1d96fac35504c" id="r_a23ede601f8aeb2e1b9b1d96fac35504c"><td class="memItemLeft">Dict[str, Any]&#160;</td><td class="memItemRight"><a class="el" href="#a23ede601f8aeb2e1b9b1d96fac35504c">analyze_imports_v2</a> (str owner, str repo, str branch=&quot;main&quot;, int max_python_files=50)</td></tr>
+<tr class="memitem:a248ee13824baaeb6ced536b14805f454" id="r_a248ee13824baaeb6ced536b14805f454"><td class="memItemLeft">dict&#160;</td><td class="memItemRight"><a class="el" href="#a248ee13824baaeb6ced536b14805f454">show_dependency_graph_v2</a> (str owner, str repo, str branch=&quot;main&quot;, int max_python_files=50)</td></tr>
+<tr class="memitem:a01e53d9c94e320c72b7257573567a905" id="r_a01e53d9c94e320c72b7257573567a905"><td class="memItemLeft">dict&#160;</td><td class="memItemRight"><a class="el" href="#a01e53d9c94e320c72b7257573567a905">kgraph_query_v2</a> (str owner, str repo, str node_name, str branch=&quot;main&quot;, int max_python_files=50)</td></tr>
 <tr class="memitem:a384f93a4b7a5ecc165bf827e2d0e19b9" id="r_a384f93a4b7a5ecc165bf827e2d0e19b9"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="#a384f93a4b7a5ecc165bf827e2d0e19b9">get_file_type</a> (str filepath)</td></tr>
 <tr class="memitem:abd8d2b4786643e779290d7679c67d972" id="r_abd8d2b4786643e779290d7679c67d972"><td class="memItemLeft">str&#160;</td><td class="memItemRight"><a class="el" href="#abd8d2b4786643e779290d7679c67d972">summarize_functions</a> (str owner, str repo, str filepath, str branch=&quot;main&quot;)</td></tr>
 <tr class="memitem:a6849e3feaec001ef3c5fe4261b26d4aa" id="r_a6849e3feaec001ef3c5fe4261b26d4aa"><td class="memItemLeft">List[str]&#160;</td><td class="memItemRight"><a class="el" href="#a6849e3feaec001ef3c5fe4261b26d4aa">split_python_functions</a> (str file_content)</td></tr>
@@ -310,6 +314,39 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a23ede601f8aeb2e1b9b1d96fac35504c" name="a23ede601f8aeb2e1b9b1d96fac35504c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23ede601f8aeb2e1b9b1d96fac35504c">&#9670;&#160;</a></span>analyze_imports_v2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> Dict[str, Any] server.analyze_imports_v2 </td>
+          <td>(</td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>repo</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str </td>          <td class="paramname"><span class="paramname"><em>branch</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;main&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>          <td class="paramname"><span class="paramname"><em>max_python_files</em></span><span class="paramdefsep"> = </span><span class="paramdefval">50</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Build a repo-backed dependency graph plus provenance metadata.</pre> 
+<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l00871">871</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
+
+</div>
+</div>
 <a id="abf7e52143fa58aef2fb1452d14dd6c61" name="abf7e52143fa58aef2fb1452d14dd6c61"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abf7e52143fa58aef2fb1452d14dd6c61">&#9670;&#160;</a></span>analyze_transactions()</h2>
 
@@ -360,7 +397,7 @@ Returns:
       </table>
 </div><div class="memdoc">
 <pre class="fragment">CodeReviewAssistant</pre> 
-<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l00950">950</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l01121">1121</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
 
 </div>
 </div>
@@ -398,7 +435,7 @@ Returns:
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Simple regex-based extraction for JavaScript/TypeScript.</pre> 
-<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l00931">931</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l01102">1102</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
 
 </div>
 </div>
@@ -520,7 +557,7 @@ Returns:
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Helper to identify file type by extension.</pre> 
-<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l00833">833</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l01004">1004</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
 
 </div>
 </div>
@@ -742,7 +779,46 @@ This tool helps junior developers (or any users) quickly understand the structur
       </table>
 </div><div class="memdoc">
 <pre class="fragment">KGraphQuery</pre> 
-<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l00974">974</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l01145">1145</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
+
+</div>
+</div>
+<a id="a01e53d9c94e320c72b7257573567a905" name="a01e53d9c94e320c72b7257573567a905"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01e53d9c94e320c72b7257573567a905">&#9670;&#160;</a></span>kgraph_query_v2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> dict server.kgraph_query_v2 </td>
+          <td>(</td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>repo</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>node_name</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str </td>          <td class="paramname"><span class="paramname"><em>branch</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;main&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>          <td class="paramname"><span class="paramname"><em>max_python_files</em></span><span class="paramdefsep"> = </span><span class="paramdefval">50</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Query neighbors for a node from a graph built from current repository content.
+</pre> 
+<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l00978">978</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
 
 </div>
 </div>
@@ -843,6 +919,25 @@ This tool helps junior developers (or any users) quickly understand the structur
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l00260">260</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
+
+</div>
+</div>
+<a id="ab9d5cb8e63d39ac3be040c5d359adc01" name="ab9d5cb8e63d39ac3be040c5d359adc01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9d5cb8e63d39ac3be040c5d359adc01">&#9670;&#160;</a></span>parse_python_imports_v2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> List[str] server.parse_python_imports_v2 </td>
+          <td>(</td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>file_content</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Parse Python imports using AST with a fallback line parser.</pre> 
+<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l00834">834</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
 
 </div>
 </div>
@@ -1032,6 +1127,41 @@ Helps developers quickly understand large complex repos visually in simple easy 
 
 </div>
 </div>
+<a id="a248ee13824baaeb6ced536b14805f454" name="a248ee13824baaeb6ced536b14805f454"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a248ee13824baaeb6ced536b14805f454">&#9670;&#160;</a></span>show_dependency_graph_v2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"> dict server.show_dependency_graph_v2 </td>
+          <td>(</td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>owner</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str</td>          <td class="paramname"><span class="paramname"><em>repo</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">str </td>          <td class="paramname"><span class="paramname"><em>branch</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;main&quot;</span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int </td>          <td class="paramname"><span class="paramname"><em>max_python_files</em></span><span class="paramdefsep"> = </span><span class="paramdefval">50</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">Trusted graph generation that is strictly built from repository file content
+fetched through this MCP server. Includes provenance metadata for auditability.
+</pre> 
+<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l00961">961</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
+
+</div>
+</div>
 <a id="a3e9a14b776124ef756c6641b90bac0b7" name="a3e9a14b776124ef756c6641b90bac0b7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3e9a14b776124ef756c6641b90bac0b7">&#9670;&#160;</a></span>split_code_into_chunks()</h2>
 
@@ -1070,7 +1200,7 @@ Helps developers quickly understand large complex repos visually in simple easy 
       </table>
 </div><div class="memdoc">
 <pre class="fragment">Parse Python code using AST.</pre> 
-<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l00915">915</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l01086">1086</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
 
 </div>
 </div>
@@ -1104,7 +1234,7 @@ Helps developers quickly understand large complex repos visually in simple easy 
 </div><div class="memdoc">
 <pre class="fragment">Extract and summarize code blocks from various file types.
 </pre> 
-<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l00867">867</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l01038">1038</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
 
 </div>
 </div>
@@ -1161,7 +1291,7 @@ Helps developers quickly understand large complex repos visually in simple easy 
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l00999">999</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l01170">1170</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
 
 </div>
 </div>
@@ -1294,7 +1424,7 @@ Helps developers quickly understand large complex repos visually in simple easy 
 <div class="line"><span class="lineno">    4</span>    <span class="stringliteral">&quot;ClassX&quot;</span>: [<span class="stringliteral">&quot;Module1&quot;</span>, <span class="stringliteral">&quot;ConceptY&quot;</span>],</div>
 <div class="line"><span class="lineno">    5</span>}</div>
 </div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l00967">967</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l01138">1138</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
 
 </div>
 </div>
@@ -1358,7 +1488,7 @@ Helps developers quickly understand large complex repos visually in simple easy 
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l01019">1019</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l01190">1190</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
 
 </div>
 </div>
@@ -1390,7 +1520,7 @@ Helps developers quickly understand large complex repos visually in simple easy 
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l01017">1017</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l01188">1188</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
 
 </div>
 </div>
@@ -1406,7 +1536,7 @@ Helps developers quickly understand large complex repos visually in simple easy 
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l01018">1018</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l01189">1189</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
 
 </div>
 </div>
@@ -1486,7 +1616,7 @@ Helps developers quickly understand large complex repos visually in simple easy 
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l01016">1016</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html#l01187">1187</a> of file <a class="el" href="../../dc/d0b/ResInsight_2server_8py_source.html">server.py</a>.</p>
 
 </div>
 </div>

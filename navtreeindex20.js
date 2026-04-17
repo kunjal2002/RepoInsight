@@ -1,5 +1,9 @@
 var NAVTREEINDEX20 =
 {
+"df/dbe/classgraphql__client_1_1GraphQLClient.html#a515777da83a4ebe045b22b30b4704318":[0,0,12,0,1],
+"df/dbe/classgraphql__client_1_1GraphQLClient.html#a515777da83a4ebe045b22b30b4704318":[1,0,2,0,1],
+"df/dbe/classgraphql__client_1_1GraphQLClient.html#a51bfbb3347f71203857e3e1258a60879":[0,0,12,0,10],
+"df/dbe/classgraphql__client_1_1GraphQLClient.html#a51bfbb3347f71203857e3e1258a60879":[1,0,2,0,10],
 "df/dbe/classgraphql__client_1_1GraphQLClient.html#a5b217a1a4777aea5d5b9abdfaa857224":[0,0,12,0,12],
 "df/dbe/classgraphql__client_1_1GraphQLClient.html#a5b217a1a4777aea5d5b9abdfaa857224":[1,0,2,0,12],
 "df/dbe/classgraphql__client_1_1GraphQLClient.html#a9662e88f4d4b3222570cc7b679cd630e":[0,0,12,0,2],
@@ -245,9 +249,5 @@ var NAVTREEINDEX20 =
 "dir_bed340dba5f5eba7a63e7ec383fb87a3.html":[2,0,5,0],
 "dir_bf4955848aa54b54989205d4f81d990e.html":[2,0,4,4,1,0,0],
 "dir_bfbe2449e8a1d235ef809f968421ffaa.html":[2,0,4,0,1,0],
-"dir_c044e0a2ff1e57ff84410ebcabeab3e8.html":[2,0,4,8,2],
-"dir_c430fd2da33c808da37f5619ed921431.html":[2,0,11,3,1],
-"dir_c5a52a81292cf9a5167198f4f346d6d9.html":[2,0,9],
-"dir_c6662fce828ac08f5bdebfca3e35251e.html":[2,0,4,0,1],
-"dir_c67a9b2a355205c8bd3229facdbb3f91.html":[2,0,4,0,1,0,0,0]
+"dir_c044e0a2ff1e57ff84410ebcabeab3e8.html":[2,0,4,8,2]
 };
