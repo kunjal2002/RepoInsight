@@ -16,7 +16,7 @@ var searchData=
   ['1_20build_20and_20run_20the_20sidecar_13',['1. Build and Run the Sidecar',['../dir_d55e8cd56a2b94d483e5bd8f68dcb407.html#autotoc_md2307',1,'']]],
   ['1_20clone_20and_20setup_14',['1. Clone and Setup',['../d3/da3/md__2github_2workspace_2ecosystem_2ai-tools_2mcp_2resilientdb-mcp_2QUICKSTART.html#autotoc_md1769',1,'']]],
   ['1_20clone_20this_20repository_15',['1. Clone this Repository',['../dir_026c4e3b309cdff0f4ebf2858eca852f.html#autotoc_md2368',1,'']]],
-  ['1_20content_20script_20↔_20page_20postmessage_16',['1. Content script ↔ page (postMessage)',['../d4/d65/md__2github_2workspace_2ecosystem_2tools_2resvault_2INTEGRATION__AND__TROUBLESHOOTING.html#autotoc_md2686',1,'']]],
+  ['1_20content_20script_20↔_20page_20postmessage_16',['1. Content script ↔ page (postMessage)',['../d4/d65/md__2github_2workspace_2ecosystem_2tools_2resvault_2INTEGRATION__AND__TROUBLESHOOTING.html#autotoc_md2701',1,'']]],
   ['1_20create_20and_20configure_20your_20database_17',['1) Create and configure your database',['../dir_7ea0a5aff69910564aaf9680e4c7bb0d.html#autotoc_md1949',1,'']]],
   ['1_20intelligent_20query_20explanation_18',['1. &lt;b&gt;Intelligent Query Explanation&lt;/b&gt;',['../dir_9793cb16456228ce932b41f4bb85986c.html#autotoc_md1328',1,'']]],
   ['1_20locate_20claude_20desktop_20config_19',['1. Locate Claude Desktop Config',['../d3/da3/md__2github_2workspace_2ecosystem_2ai-tools_2mcp_2resilientdb-mcp_2QUICKSTART.html#autotoc_md1777',1,'']]],
