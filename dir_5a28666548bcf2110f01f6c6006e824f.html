@@ -237,9 +237,62 @@ Docker (optional)</h3>
 </div><!-- fragment --><p>Ensure <span class="tt">.env</span> contains <span class="tt">GITHUB_TOKEN</span>, <span class="tt">MCP_TOKEN</span>, and any other variables you need. The image exposes port <b>8005</b>.</p>
 <hr  />
 <h2 class="doxsection"><a class="anchor" id="autotoc_md1881"></a>
+ResInsight MCP Access</h2>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md1882"></a>
+Hosted deployment</h3>
+<p>If you only want to use ResInsight, no clone is required. Connect your MCP client to:</p>
+<p><span class="tt"><a href="http://52.45.172.212:8005/mcp">http://52.45.172.212:8005/mcp</a></span></p>
+<p>Use the lab-issued Bearer token in your client configuration. The hosted server runs in Docker as <span class="tt">resinsight</span> with port mapping <span class="tt">8005:8005</span>.</p>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md1883"></a>
+Local setup</h3>
+<p>To run ResInsight locally or modify the server:</p>
+<ol type="1">
+<li>Clone this fork or the upstream repository.</li>
+<li>Create and activate a Python virtual environment.</li>
+<li>Install dependencies from <span class="tt">requirements.txt</span>.</li>
+<li>Create a <span class="tt">.env</span> file with <span class="tt">GITHUB_TOKEN</span> and <span class="tt">MCP_TOKEN</span>.</li>
+<li>Start the server with <span class="tt">python server.py</span>, or build and run the Docker image.</li>
+</ol>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md1884"></a>
+Claude Desktop configuration</h3>
+<p>For local, self-hosted Claude Desktop usage, use the direct Python MCP server entry:</p>
+<div class="fragment"><div class="line">{</div>
+<div class="line">  &quot;mcpServers&quot;: {</div>
+<div class="line">    &quot;resilientdb-assistant&quot;: {</div>
+<div class="line">      &quot;command&quot;: &quot;python&quot;,</div>
+<div class="line">      &quot;args&quot;: [&quot;C:/path/to/incubator-resilientdb/ecosystem/ai-tools/mcp/ResInsight/server.py&quot;],</div>
+<div class="line">      &quot;env&quot;: {</div>
+<div class="line">        &quot;PYTHONPATH&quot;: &quot;C:/path/to/incubator-resilientdb/ecosystem/ai-tools/mcp/ResInsight&quot;,</div>
+<div class="line">        &quot;GITHUB_TOKEN&quot;: &quot;ghp_...&quot;,</div>
+<div class="line">        &quot;MCP_TOKEN&quot;: &quot;same_as_server_env_or_cloud_issued_token&quot;</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>For remote/deployed usage in Claude builds that require a bridge, use the hosted <span class="tt">/mcp</span> URL with <span class="tt">mcp-remote</span>:</p>
+<div class="fragment"><div class="line">{</div>
+<div class="line">  &quot;mcpServers&quot;: {</div>
+<div class="line">    &quot;ResInsight: AI-driven developer onboarding ecosystem&quot;: {</div>
+<div class="line">      &quot;command&quot;: &quot;npx&quot;,</div>
+<div class="line">      &quot;args&quot;: [</div>
+<div class="line">        &quot;-y&quot;,</div>
+<div class="line">        &quot;mcp-remote&quot;,</div>
+<div class="line">        &quot;http://52.45.172.212:8005/mcp&quot;,</div>
+<div class="line">        &quot;--header&quot;,</div>
+<div class="line">        &quot;Authorization: Bearer MCP_TOKEN&quot;</div>
+<div class="line">      ],</div>
+<div class="line">      &quot;env&quot;: {</div>
+<div class="line">        &quot;MCP_REMOTE_CONFIG_DIR&quot;: &quot;C:/Users/your-user/.mcp-auth&quot;</div>
+<div class="line">      }</div>
+<div class="line">    }</div>
+<div class="line">  }</div>
+<div class="line">}</div>
+</div><!-- fragment --><p><span class="tt">MCP_REMOTE_CONFIG_DIR</span> is optional and only controls where the bridge stores auth/session files. If your client supports native remote HTTP MCP fields, you can use <span class="tt">url</span> + <span class="tt">headers</span> instead of the bridge.</p>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md1886"></a>
 Authentication &amp; Security</h2>
 <p>ResInsight uses <b>two complementary credentials</b>:</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md1882"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md1887"></a>
 1. MCP access token (<span class="tt">MCP_TOKEN</span>)</h3>
 <p><b>Purpose:</b> Authenticates clients to the MCP HTTP server (<span class="tt">Authorization: Bearer …</span>).</p>
 <p><b>Two cases:</b></p>
@@ -253,7 +306,7 @@ Authentication &amp; Security</h2>
 </table>
 <p>Treat every token as a secret: do not commit <span class="tt">.env</span> or share tokens in chat.</p>
 <p>If <span class="tt">MCP_TOKEN</span> is unset on <b>your own</b> server, it can start without Bearer enforcement (only for local, non-exposed use).</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md1883"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md1888"></a>
 2. GitHub Personal Access Token (<span class="tt">GITHUB_TOKEN</span>)</h3>
 <p><b>Purpose:</b> Lets the server call the GitHub API to analyze repositories.</p>
 <p><b>Typical scopes:</b></p><ul>
@@ -267,9 +320,9 @@ Authentication &amp; Security</h2>
 <li>Copy the token once and add to <span class="tt">.env</span>: <span class="tt">GITHUB_TOKEN=ghp_...</span></li>
 </ol>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md1885"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md1890"></a>
 How to Use</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md1886"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md1891"></a>
 Method 1: MCP Client Integration (Recommended) : Scroll for MCP Client Setup</h3>
 <ol type="1">
 <li><b>Setup MCP Client</b> (e.g., Claude Desktop)<ul>
@@ -285,9 +338,9 @@ Method 1: MCP Client Integration (Recommended) : Scroll for MCP Client Setup</h3
 </div><!-- fragment --></li>
 </ol>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md1888"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md1893"></a>
 Example Scenarios</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md1889"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md1894"></a>
 🎓 Complete Beginner Workflow</h3>
 <p>Start with the basics and progressively learn:</p>
 <div class="fragment"><div class="line"># 1. Introduction</div>
@@ -301,7 +354,7 @@ Example Scenarios</h2>
 <div class="line"> </div>
 <div class="line"># 4. Hands-on practice</div>
 <div class="line">&quot;Show me how to create a simple transaction&quot;</div>
-</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md1890"></a>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md1895"></a>
 🔧 Troubleshooting Workflow</h3>
 <p>Get targeted help when you encounter issues:</p>
 <div class="fragment"><div class="line"># 1. Report the problem</div>
@@ -312,7 +365,7 @@ Example Scenarios</h2>
 <div class="line"> </div>
 <div class="line"># 3. Verify the solution</div>
 <div class="line">&quot;How do I check if gRPC is properly installed?&quot;</div>
-</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md1891"></a>
+</div><!-- fragment --><h3 class="doxsection"><a class="anchor" id="autotoc_md1896"></a>
 🚀 Advanced Learning Workflow</h3>
 <p>Deep dive into system design and optimization:</p>
 <div class="fragment"><div class="line"># 1. Algorithm deep-dive</div>
@@ -324,9 +377,9 @@ Example Scenarios</h2>
 <div class="line"># 3. Code exploration</div>
 <div class="line">&quot;Show me the transaction processing implementation&quot;</div>
 </div><!-- fragment --><hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md1893"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md1898"></a>
 MCP Client Setup</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md1894"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md1899"></a>
 Claude Desktop Configuration</h3>
 <p>Add the following to your Claude Desktop MCP configuration file:</p>
 <div class="fragment"><div class="line">{</div>
@@ -343,7 +396,7 @@ Claude Desktop Configuration</h3>
 <div class="line">  }</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>Set <span class="tt">GITHUB_TOKEN</span> and <span class="tt">MCP_TOKEN</span> to match your setup: <b>same self-chosen secret as the server</b> when local, or the <b>team-issued token</b> when pointing the client at the cloud instance (or rely on <span class="tt">.env</span> if the client loads it).</p>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md1895"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md1900"></a>
 VS Code with Continue Extension</h3>
 <p>Add the following to your Continue configuration:</p>
 <div class="fragment"><div class="line">{</div>
@@ -361,9 +414,9 @@ VS Code with Continue Extension</h3>
 <div class="line">  ]</div>
 <div class="line">}</div>
 </div><!-- fragment --><hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md1897"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md1902"></a>
 Educational Features</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md1898"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md1903"></a>
 Available Query Types</h3>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -385,9 +438,9 @@ Available Query Types</h3>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><b>General Questions</b>  </td><td class="markdownTableBodyNone">"Tell me about ResilientDB"  </td></tr>
 </table>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md1899"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md1904"></a>
 Learning Progression</h3>
-<h4 class="doxsection"><a class="anchor" id="autotoc_md1900"></a>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md1905"></a>
 🟢 Beginner Level</h4>
 <ul>
 <li>Questions on fundamentals <div class="fragment"><div class="line">&quot;What is ResilientDB?&quot;</div>
@@ -395,7 +448,7 @@ Learning Progression</h3>
 <div class="line">&quot;How do I get started?&quot;</div>
 </div><!-- fragment --></li>
 </ul>
-<h4 class="doxsection"><a class="anchor" id="autotoc_md1901"></a>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md1906"></a>
 🟡 Intermediate Level</h4>
 <ul>
 <li>Understanding core concepts <div class="fragment"><div class="line">&quot;Explain Byzantine fault tolerance&quot;</div>
@@ -404,7 +457,7 @@ Learning Progression</h3>
 <div class="line">&quot;How is inventory upload implemented in Arrayan?&quot;</div>
 </div><!-- fragment --></li>
 </ul>
-<h4 class="doxsection"><a class="anchor" id="autotoc_md1902"></a>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md1907"></a>
 🔴 Advanced Level</h4>
 <ul>
 <li>Deep system design knowledge <div class="fragment"><div class="line">&quot;Deep dive into PBFT algorithm&quot;</div>
@@ -413,7 +466,7 @@ Learning Progression</h3>
 <div class="line">&quot;What is the relation between these files for Inventory Upload in Arrayan?&quot;</div>
 </div><!-- fragment --></li>
 </ul>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md1903"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md1908"></a>
 Verify Your Setup</h3>
 <div class="fragment"><div class="line"># Check Python version</div>
 <div class="line">python --version</div>
@@ -424,11 +477,11 @@ Verify Your Setup</h3>
 <div class="line"># Test Docker (if using)</div>
 <div class="line">docker --version</div>
 </div><!-- fragment --><hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md1905"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md1910"></a>
 Troubleshooting</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md1906"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md1911"></a>
 Common Issues &amp; Solutions</h3>
-<h4 class="doxsection"><a class="anchor" id="autotoc_md1907"></a>
+<h4 class="doxsection"><a class="anchor" id="autotoc_md1912"></a>
 "Module not found" errors</h4>
 <div class="fragment"><div class="line"># Ensure virtual environment is activated</div>
 <div class="line">.venv\Scripts\activate  # Windows</div>
@@ -436,7 +489,7 @@ Common Issues &amp; Solutions</h3>
 <div class="line"> </div>
 <div class="line"># Reinstall dependencies</div>
 <div class="line">pip install -r requirements.txt</div>
-</div><!-- fragment --><h4 class="doxsection"><a class="anchor" id="autotoc_md1908"></a>
+</div><!-- fragment --><h4 class="doxsection"><a class="anchor" id="autotoc_md1913"></a>
 MCP client connection issues</h4>
 <ul>
 <li>Check file paths in MCP configuration (paths should point at <span class="tt">ecosystem/ai-tools/mcp/ResInsight</span> in the monorepo)</li>
@@ -445,7 +498,7 @@ MCP client connection issues</h4>
 <li>Ensure <b><span class="tt">MCP_TOKEN</span></b> matches the server: <b>your chosen secret</b> for local runs, or the <b>team-issued token</b> for the cloud instance; set <b><span class="tt">GITHUB_TOKEN</span></b> in <span class="tt">.env</span> or the client <span class="tt">env</span> block</li>
 </ul>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md1910"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md1915"></a>
 References</h2>
 <ul>
 <li>📚 <a href="https://modelcontextprotocol.io/">Model Context Protocol Documentation</a></li>
@@ -453,9 +506,9 @@ References</h2>
 <li>🐳 <a href="https://docs.docker.com/">Docker Documentation</a></li>
 </ul>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md1912"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md1917"></a>
 Getting Started</h2>
-<h3 class="doxsection"><a class="anchor" id="autotoc_md1913"></a>
+<h3 class="doxsection"><a class="anchor" id="autotoc_md1918"></a>
 Quick Launch</h3>
 <ol type="1">
 <li><b>Create <span class="tt">.env</span></b> with <span class="tt">GITHUB_TOKEN</span> and <span class="tt">MCP_TOKEN</span> (pick your own secret for local runs; use the <b>team-issued token</b> only when connecting to the hosted cloud instance).</li>
@@ -467,11 +520,11 @@ Quick Launch</h3>
 </ol>
 <p><b>Transform your ResilientDB learning from documentation reading to interactive conversation!</b> 🚀</p>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md1915"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md1920"></a>
 License</h2>
 <p>Licensed under the <b>Apache License, Version 2.0</b>. See the Apache ResilientDB LICENSE file for details. All source files include the required Apache License 2.0 header.</p>
 <hr  />
-<h2 class="doxsection"><a class="anchor" id="autotoc_md1917"></a>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md1922"></a>
 Acknowledgements</h2>
 <table class="markdownTable">
 <tr class="markdownTableHead">

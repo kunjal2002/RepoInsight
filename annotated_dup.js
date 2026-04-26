@@ -29,6 +29,7 @@ var annotated_dup =
     ] ],
     [ "resdb", "d5/d10/namespaceresdb.html", [
       [ "storage", "dd/dae/namespaceresdb_1_1storage.html", [
+        [ "DuckDB", "d2/d2d/classresdb_1_1storage_1_1DuckDB.html", "d2/d2d/classresdb_1_1storage_1_1DuckDB" ],
         [ "ResLevelDB", "d3/d39/classresdb_1_1storage_1_1ResLevelDB.html", "d3/d39/classresdb_1_1storage_1_1ResLevelDB" ],
         [ "MemoryDB", "da/d75/classresdb_1_1storage_1_1MemoryDB.html", "da/d75/classresdb_1_1storage_1_1MemoryDB" ]
       ] ],

@@ -274,6 +274,7 @@ var hierarchy =
     ] ],
     [ "resdb::Storage", "d2/d14/classresdb_1_1Storage.html", [
       [ "resdb::MockStorage", "de/d28/classresdb_1_1MockStorage.html", null ],
+      [ "resdb::storage::DuckDB", "d2/d2d/classresdb_1_1storage_1_1DuckDB.html", null ],
       [ "resdb::storage::MemoryDB", "da/d75/classresdb_1_1storage_1_1MemoryDB.html", null ],
       [ "resdb::storage::ResLevelDB", "d3/d39/classresdb_1_1storage_1_1ResLevelDB.html", null ]
     ] ],

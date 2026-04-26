@@ -1,5 +1,8 @@
 var NAVTREEINDEX1 =
 {
+"d0/ded/classresdb_1_1ConsensusManagerPBFT.html#abc117418c5375d245e128db2b8dab58a":[1,0,6,49,1],
+"d0/ded/classresdb_1_1ConsensusManagerPBFT.html#ac83af970fc0df80b514a27078ba93e9f":[0,0,22,53,30],
+"d0/ded/classresdb_1_1ConsensusManagerPBFT.html#ac83af970fc0df80b514a27078ba93e9f":[1,0,6,49,30],
 "d0/ded/classresdb_1_1ConsensusManagerPBFT.html#accbe75d7be210c0357cde550d4947198":[0,0,22,53,21],
 "d0/ded/classresdb_1_1ConsensusManagerPBFT.html#accbe75d7be210c0357cde550d4947198":[1,0,6,49,21],
 "d0/ded/classresdb_1_1ConsensusManagerPBFT.html#ad9932af00b5c059f10e7f0a74dda19c2":[0,0,22,53,25],
@@ -246,8 +249,5 @@ var NAVTREEINDEX1 =
 "d1/db2/classresdb_1_1ViewChangeManager.html#a42a9ee0a180aaa1be08fca109fa8d3d0":[0,0,22,68,17],
 "d1/db2/classresdb_1_1ViewChangeManager.html#a42a9ee0a180aaa1be08fca109fa8d3d0":[1,0,6,64,17],
 "d1/db2/classresdb_1_1ViewChangeManager.html#a455214e9177a8c6d9cf035452afb7822":[0,0,22,68,27],
-"d1/db2/classresdb_1_1ViewChangeManager.html#a455214e9177a8c6d9cf035452afb7822":[1,0,6,64,27],
-"d1/db2/classresdb_1_1ViewChangeManager.html#a4573a1cac52997a528c00ce4fbf3c8d6":[0,0,22,68,30],
-"d1/db2/classresdb_1_1ViewChangeManager.html#a4573a1cac52997a528c00ce4fbf3c8d6":[1,0,6,64,30],
-"d1/db2/classresdb_1_1ViewChangeManager.html#a458c26e26eb29aefd222f9d414799a48":[0,0,22,68,22]
+"d1/db2/classresdb_1_1ViewChangeManager.html#a455214e9177a8c6d9cf035452afb7822":[1,0,6,64,27]
 };
